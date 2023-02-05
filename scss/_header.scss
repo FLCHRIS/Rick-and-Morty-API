@@ -1,0 +1,152 @@
+@import "_variables";
+
+header {
+    font-size: 1.5rem;
+    font-family: $fontOpenSans;
+    padding: 3em 0;
+    overflow: hidden;
+    transition: background-color .5s;
+    .header__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .nav__logo {
+            img {
+                width: 10em;
+                transition: transform .5s ease, filter .5s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .nav__hamburger-show {
+            background: none;
+            border: none;
+            outline: none;
+            transition: transform .5s ease, filter .5s;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        .nav__container {
+            position: fixed;
+            top: 7.5em;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            z-index: 10;
+            background-color: $White;
+            transition: clip-path 1s ease-in-out;
+            clip-path: circle(0% at 100% 1%);
+            list-style: none;
+            li {
+                cursor: pointer;
+                display: block;
+                margin: 4em 2em 0 0;
+                padding: 1.2em 2em;
+                border-radius: .3em;
+                font-size: 1.5rem;
+                color: $VeryDarkBlue;
+                font-weight: 500;
+                overflow: hidden;
+                position: relative;
+            }
+            .label-active {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: .7em;
+                    top: 0;
+                    left: 0;
+                    background-image: $backgroundGreen;
+                }
+            }
+        }
+        .nav__container-show {
+            clip-path: circle(141.0% at 100% 1%);
+        }
+    }
+}
+header.dark {
+    background-color: $DarkBlueMain;
+    .header__nav {
+        .nav__logo {
+            img {
+                filter: brightness(0) invert(100%);
+            }
+        }
+        .nav__hamburger-show {
+            svg {
+                filter: brightness(0) invert(100%);
+            }
+        }
+        .nav__container {
+            background-color: $DarkBlueMain;
+            li {
+                transition: color .5s;
+                color: $White;
+            }
+        }
+    }
+}
+@media screen and (min-width: 500px){
+    header {
+        font-size: 1.6rem;
+        .header__nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .nav__logo {
+                img {
+                    width: 11em;
+                }
+            }
+            .nav__hamburger-show {
+                display: none;
+            }
+            .nav__container {
+                position: static;
+                width: auto;
+                height: auto;
+                transition: clip-path 1s ease-in-out;
+                clip-path: none;
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+                li {
+                    margin: 0 ;
+                    padding: .5em .8em;
+                }
+                .label-active {
+                    &::after {
+                        height: .5em;
+                        width: 100%;
+                        top: auto;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+            .nav__container-show {
+                clip-path: circle(141.0% at 100% 1%);
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px){
+    .header {
+        &__nav {
+            .nav__container {
+                gap: 2.5em;
+                li {
+                    font-size: 1.6rem;
+                    padding: .7em .8em;
+                }
+            }
+        }
+    }
+}

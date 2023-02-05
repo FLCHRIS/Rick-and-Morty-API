@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/3478c33dcb.js" crossorigin="anonymous"></script>
+    <title>Rick and Morty</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav nav container">
+            <a href="index.html" aria-label="Go to Rick and Morty" class="nav__logo">
+                <img src="./asset/logo.svg" alt="Rick and Morty">
+            </a>
+            <button class="nav__hamburger-show" aria-label="show menu">
+                <svg class="icon-show" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: hsl(209, 33%, 12%);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+            </button>
+            <ul class="nav__container">
+                <li class="nav__label label-active" id="character">Character</li>
+                <li class="nav__label" id="location">Location</li>
+                <li id="episode" class="nav__label">Episode</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="toggle-theme">
+            <div class="toggle-circle"></div>
+        </div>
+        <section class="main__cards cards container">
+            <div class="cards__information">
+                
+            </div>
+            <div class="cards__container">
+                
+            </div>
+            <button class="main__button">
+                Show more
+            </button>
+            <a href="https://github.com/FLCHRIS" target="_blank">Christian FL</a>
+        </section>
+    </main>
+    <script src="./js/index.js" type="module"></script>
+</body>
+</html>

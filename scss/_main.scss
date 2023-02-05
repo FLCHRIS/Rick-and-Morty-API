@@ -1,0 +1,219 @@
+@import '_variables';
+
+main {
+    font-size: 1.5rem;
+    font-family: $fontOpenSans;
+    padding: 1em 0 3em;
+    position: relative;
+    transition: background-color .5s;
+    .toggle-theme {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        width: 4em;
+        height: 2em;
+        border-radius: 1em;
+        background-image: $backgroundGreen;
+        cursor: pointer;
+        z-index: 20;
+        .toggle-circle{
+            position: absolute;
+            left: 7px;
+            top: 5px;
+            width: 1.3em;
+            height: 1.3em;
+            background-color: $White;
+            border-radius: 50%;
+            transition: background-color .5s, transform .5s;
+        }
+        .toggle-circle-dark {
+            transform: translateX(1.6em);
+        }
+    }
+    .main__cards {
+        overflow: hidden;
+        position: relative;
+        .cards__information {
+            padding: 4em 0;
+            h1 {
+                width: max-content;
+                margin: 0 auto;
+                transition: color .5s;
+                text-align: center;
+                color: $VeryDarkBlue;
+                font-size: 3.5rem;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: .1em;
+                    border-radius: 2px;
+                    background-image: $backgroundGreen;
+                }
+            }
+            .cards__data {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                gap: 2em;
+                margin: 3em 0;
+                p {
+                    transition: color .5s;
+                    text-align: start;
+                    font-size: 1.5rem;
+                    color: $VeryDarkBlue;
+                    font-weight: 400;
+                    span {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .cards__container {
+            min-height: 55vh;
+            padding: 3em 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 3em;
+            .card {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                box-shadow: 1px 1px 12px 1px hsl(209, 33%, 12%, .3);
+                overflow: hidden;
+                border-radius: .5em;
+                transition: background-color .5s;
+                background: $backgroundGreen;
+                background-size: 100% 8.5em;
+                background-repeat: no-repeat;
+                position: relative;
+                .card__avatar {
+                    width: 8em;
+                    margin: 4.5em auto 0;
+                    border-radius: 50%;
+                    transition: border .5s;
+                    border: 5px solid $White;
+                }
+                .card__name {
+                    padding: 0 1.5em;
+                    transition: color .5s;
+                    color: $VeryDarkBlue;
+                    text-align: center;
+                    margin: 1em 0;
+                }
+                .card__id {
+                    position: absolute;
+                    top: 1em;
+                    right: 1em;
+                    font-size: 1.6rem;
+                    color: $White;
+                    font-weight: 700;
+                }
+                .card__status {
+                    position: absolute;
+                    left: 1em;
+                    top: 1em;
+                    font-size: 1.6rem;
+                    color: $White;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .card__specie, .card__type {
+                    padding: 0 1.5em;
+                    font-size: 1.5rem;
+                    transition: color .5s;
+                    color: $VeryDarkBlue;
+                    margin: 1em 0 2em;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    font-weight: 500;
+                    gap: 2.5em;
+                    span {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+        .main__button {
+            display: block;
+            margin: 3em auto ;
+            padding: .7em 2.5em;
+            border: none;
+            background: $backgroundGreen;
+            border-radius: .4em;
+            box-shadow: 1px 1px 12px 1px hsl(209, 33%, 12%, .2);
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        a {
+            transition: color .5s;
+            display: block;
+            position: absolute;
+            bottom: .1em;
+            right: .5em;
+            color: $VeryDarkBlue;
+            text-decoration: none;
+            font-weight: 700;
+            padding: .5em;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: .3em;
+                background-image: $backgroundGreen;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+main.dark {
+    background-color: $DarkBlueFooter;
+    .toggle-theme {
+        .toggle-circle{
+            background-color: $DarkBlueMain;
+        }
+    }
+    .main__cards {
+        .cards__information {
+            h1 {
+                color: $White;
+            }
+            .cards__data {
+                p {
+                    color: $WhiteLight;
+                    span {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .cards__container {
+            .card {
+                background-color: $DarkBlueTestimonials;
+                .card__avatar {
+                    border: 5px solid $DarkBlueTestimonials;
+                }
+                .card__name {
+                    color: $White;
+                }
+                .card__specie, .card__type {
+                    color: $WhiteLight;
+                }
+            }
+        }
+        a {
+            color: $White;
+        }
+    }
+}
+

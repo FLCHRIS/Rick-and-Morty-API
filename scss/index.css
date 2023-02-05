@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+html {
+  font-size: 62.5%;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #4facfe 0%, #00f2fe 100%);
+  border-radius: 2px;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*intro and email sign up background*/
+/*main background*/
+/*footer background*/
+/*testimonials background*/
+/*inside call-to-action gradient*/
+/*inside call-to-action gradient*/
+/*error*/
+header {
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  padding: 3em 0;
+  overflow: hidden;
+  transition: background-color 0.5s;
+}
+header .header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header__nav .nav__logo img {
+  width: 10em;
+  transition: transform 0.5s ease, filter 0.5s;
+}
+header .header__nav .nav__logo img:hover {
+  transform: scale(1.1);
+}
+header .header__nav .nav__hamburger-show {
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.5s ease, filter 0.5s;
+  cursor: pointer;
+}
+header .header__nav .nav__hamburger-show:hover {
+  transform: scale(1.1);
+}
+header .header__nav .nav__container {
+  position: fixed;
+  top: 7.5em;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: 10;
+  background-color: hsl(0deg, 0%, 100%);
+  transition: -webkit-clip-path 1s ease-in-out;
+  transition: clip-path 1s ease-in-out;
+  transition: clip-path 1s ease-in-out, -webkit-clip-path 1s ease-in-out;
+  -webkit-clip-path: circle(0% at 100% 1%);
+          clip-path: circle(0% at 100% 1%);
+  list-style: none;
+}
+header .header__nav .nav__container li {
+  cursor: pointer;
+  display: block;
+  margin: 4em 2em 0 0;
+  padding: 1.2em 2em;
+  border-radius: 0.3em;
+  font-size: 1.5rem;
+  color: hsl(209deg, 33%, 12%);
+  font-weight: 500;
+  overflow: hidden;
+  position: relative;
+}
+header .header__nav .nav__container .label-active::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0.7em;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+}
+header .header__nav .nav__container-show {
+  -webkit-clip-path: circle(141% at 100% 1%);
+          clip-path: circle(141% at 100% 1%);
+}
+
+header.dark {
+  background-color: hsl(218deg, 28%, 13%);
+}
+header.dark .header__nav .nav__logo img {
+  filter: brightness(0) invert(100%);
+}
+header.dark .header__nav .nav__hamburger-show svg {
+  filter: brightness(0) invert(100%);
+}
+header.dark .header__nav .nav__container {
+  background-color: hsl(218deg, 28%, 13%);
+}
+header.dark .header__nav .nav__container li {
+  transition: color 0.5s;
+  color: hsl(0deg, 0%, 100%);
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    font-size: 1.6rem;
+  }
+  header .header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .header__nav .nav__logo img {
+    width: 11em;
+  }
+  header .header__nav .nav__hamburger-show {
+    display: none;
+  }
+  header .header__nav .nav__container {
+    position: static;
+    width: auto;
+    height: auto;
+    transition: -webkit-clip-path 1s ease-in-out;
+    transition: clip-path 1s ease-in-out;
+    transition: clip-path 1s ease-in-out, -webkit-clip-path 1s ease-in-out;
+    -webkit-clip-path: none;
+            clip-path: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+  header .header__nav .nav__container li {
+    margin: 0;
+    padding: 0.5em 0.8em;
+  }
+  header .header__nav .nav__container .label-active::after {
+    height: 0.5em;
+    width: 100%;
+    top: auto;
+    left: 0;
+    bottom: 0;
+  }
+  header .header__nav .nav__container-show {
+    -webkit-clip-path: circle(141% at 100% 1%);
+            clip-path: circle(141% at 100% 1%);
+  }
+}
+@media screen and (min-width: 700px) {
+  .header__nav .nav__container {
+    gap: 2.5em;
+  }
+  .header__nav .nav__container li {
+    font-size: 1.6rem;
+    padding: 0.7em 0.8em;
+  }
+}
+/*intro and email sign up background*/
+/*main background*/
+/*footer background*/
+/*testimonials background*/
+/*inside call-to-action gradient*/
+/*inside call-to-action gradient*/
+/*error*/
+main {
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  padding: 1em 0 3em;
+  position: relative;
+  transition: background-color 0.5s;
+}
+main .toggle-theme {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 4em;
+  height: 2em;
+  border-radius: 1em;
+  background-image: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+  cursor: pointer;
+  z-index: 20;
+}
+main .toggle-theme .toggle-circle {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  transition: background-color 0.5s, transform 0.5s;
+}
+main .toggle-theme .toggle-circle-dark {
+  transform: translateX(1.6em);
+}
+main .main__cards {
+  overflow: hidden;
+  position: relative;
+}
+main .main__cards .cards__information {
+  padding: 4em 0;
+}
+main .main__cards .cards__information h1 {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  transition: color 0.5s;
+  text-align: center;
+  color: hsl(209deg, 33%, 12%);
+  font-size: 3.5rem;
+  position: relative;
+}
+main .main__cards .cards__information h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+}
+main .main__cards .cards__information .cards__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+  margin: 3em 0;
+}
+main .main__cards .cards__information .cards__data p {
+  transition: color 0.5s;
+  text-align: start;
+  font-size: 1.5rem;
+  color: hsl(209deg, 33%, 12%);
+  font-weight: 400;
+}
+main .main__cards .cards__information .cards__data p span {
+  font-weight: 500;
+}
+main .main__cards .cards__container {
+  min-height: 55vh;
+  padding: 3em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 3em;
+}
+main .main__cards .cards__container .card {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 12px 1px hsla(209deg, 33%, 12%, 0.3);
+  overflow: hidden;
+  border-radius: 0.5em;
+  transition: background-color 0.5s;
+  background: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+  background-size: 100% 8.5em;
+  background-repeat: no-repeat;
+  position: relative;
+}
+main .main__cards .cards__container .card .card__avatar {
+  width: 8em;
+  margin: 4.5em auto 0;
+  border-radius: 50%;
+  transition: border 0.5s;
+  border: 5px solid hsl(0deg, 0%, 100%);
+}
+main .main__cards .cards__container .card .card__name {
+  padding: 0 1.5em;
+  transition: color 0.5s;
+  color: hsl(209deg, 33%, 12%);
+  text-align: center;
+  margin: 1em 0;
+}
+main .main__cards .cards__container .card .card__id {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1.6rem;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+}
+main .main__cards .cards__container .card .card__status {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1.6rem;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+main .main__cards .cards__container .card .card__specie, main .main__cards .cards__container .card .card__type {
+  padding: 0 1.5em;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: hsl(209deg, 33%, 12%);
+  margin: 1em 0 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 500;
+  gap: 2.5em;
+}
+main .main__cards .cards__container .card .card__specie span, main .main__cards .cards__container .card .card__type span {
+  text-align: end;
+}
+main .main__cards .main__button {
+  display: block;
+  margin: 3em auto;
+  padding: 0.7em 2.5em;
+  border: none;
+  background: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+  border-radius: 0.4em;
+  box-shadow: 1px 1px 12px 1px hsla(209deg, 33%, 12%, 0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+main .main__cards a {
+  transition: color 0.5s;
+  display: block;
+  position: absolute;
+  bottom: 0.1em;
+  right: 0.5em;
+  color: hsl(209deg, 33%, 12%);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5em;
+}
+main .main__cards a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 0.3em;
+  background-image: linear-gradient(to right, hsl(176deg, 68%, 64%) 0%, hsl(198deg, 60%, 50%) 100%);
+  border-radius: 2px;
+}
+
+main.dark {
+  background-color: hsl(216deg, 53%, 9%);
+}
+main.dark .toggle-theme .toggle-circle {
+  background-color: hsl(218deg, 28%, 13%);
+}
+main.dark .main__cards .cards__information h1 {
+  color: hsl(0deg, 0%, 100%);
+}
+main.dark .main__cards .cards__information .cards__data p {
+  color: hsl(0deg, 0%, 75%);
+}
+main.dark .main__cards .cards__information .cards__data p span {
+  font-weight: 500;
+}
+main.dark .main__cards .cards__container .card {
+  background-color: hsl(219deg, 30%, 18%);
+}
+main.dark .main__cards .cards__container .card .card__avatar {
+  border: 5px solid hsl(219deg, 30%, 18%);
+}
+main.dark .main__cards .cards__container .card .card__name {
+  color: hsl(0deg, 0%, 100%);
+}
+main.dark .main__cards .cards__container .card .card__specie, main.dark .main__cards .cards__container .card .card__type {
+  color: hsl(0deg, 0%, 75%);
+}
+main.dark .main__cards a {
+  color: hsl(0deg, 0%, 100%);
+}/*# sourceMappingURL=index.css.map */
