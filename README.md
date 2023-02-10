@@ -2,8 +2,8 @@
 
 Esta es una pequeña practica donde se consume la api de [RickAndMorty](https://rickandmortyapi.com/).
 
-- Se puede observar personajes de la serie por *capitulos*, *locaciones*, y *personajes*.
-- Tiene dos temas, **Light**, **Dark**.
+- Se puede ver personajes de la serie por *capitulos*, *locaciones*, y *personajes*.
+- Hay dos temas: **Light** y **Dark**.
 
 ![](./screenshot.png)
 ![](./screenshotDark.png)
