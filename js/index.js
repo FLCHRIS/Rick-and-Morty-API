@@ -46,6 +46,7 @@ itemList.forEach(item => {
 
             page++;
             ban = -1;
+            document.querySelector('.nav__container').classList.toggle('nav__container-show');
         });
     }else if(item.id == 'location'){
         item.addEventListener('click', async () => {
@@ -67,6 +68,7 @@ itemList.forEach(item => {
 
             page++;
             ban = 0;
+            document.querySelector('.nav__container').classList.toggle('nav__container-show');
         });
     }else if(item.id == 'episode') {
         item.addEventListener('click', async () => {
@@ -89,6 +91,7 @@ itemList.forEach(item => {
 
             page++;
             ban = 1;
+            document.querySelector('.nav__container').classList.toggle('nav__container-show');
         });
     }
 });
